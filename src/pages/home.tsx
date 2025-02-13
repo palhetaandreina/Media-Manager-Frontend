@@ -1,18 +1,31 @@
-import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
+import { useState } from 'react';
+
+import { AppBar, Box, Icon, IconButton, Toolbar, Typography } from '@mui/material';
+import { TemporaryDrawer } from '../components/drawer/drawer';
 
 export function HomePage() {
+	const [open, setOpen] = useState(false);
+
+	const toggleDrawer = (newOpen: boolean) => () => {
+		setOpen(newOpen);
+	};
+
 	return (
 		<div>
-			<Box sx={{ flexGrow: 1 }}>
+			<Box>
 				<AppBar>
 					<Toolbar>
-						<IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}></IconButton>
+						<IconButton onClick={toggleDrawer(true)}>
+							<Icon style={{ color: 'white' }}>menu</Icon>
+						</IconButton>
+
 						<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-							News
+							Menu
 						</Typography>
-						<Button color="inherit">Logout</Button>
 					</Toolbar>
 				</AppBar>
+
+				<TemporaryDrawer open={open} toggleDrawer={toggleDrawer} />
 			</Box>
 		</div>
 	);
