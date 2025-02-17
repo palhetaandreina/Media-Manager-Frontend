@@ -1,4 +1,4 @@
-import HourChartOverview from '../components/drawer/charts/chart-hour';
+import HourChartOverview from '../components/charts/chart-hour';
 import { Navbar } from '../components/navbar/navbar';
 
 import '../style/chart.css';
