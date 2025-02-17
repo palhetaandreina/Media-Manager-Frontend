@@ -1,14 +1,14 @@
 import { Button, TextField, Typography } from '@mui/material';
 import '../style/style.css';
 
-export function Register() {
+export function RegisterUser() {
 	return (
 		<div>
 			<div className="section-title">
 				<Typography variant="h3">Cadastre-se</Typography>
 			</div>
 
-			<div>
+			<div className="card-inputs">
 				<div className="input">
 					<TextField id="outlined-basic" label="Nome" variant="outlined" />
 				</div>

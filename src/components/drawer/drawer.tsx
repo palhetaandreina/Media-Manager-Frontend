@@ -38,7 +38,7 @@ export function TemporaryDrawer({ open, toggleDrawer }: TemporaryDrawerAttr) {
 		<Box>
 			<List>
 				{items.map((item) => (
-					<ListItem>
+					<ListItem disablePadding>
 						<ListItemButton>
 							<ListItemIcon>
 								<Icon>{item.icon}</Icon>
