@@ -21,6 +21,10 @@ export function TemporaryDrawer({ open, toggleDrawer }: TemporaryDrawerAttr) {
 			icon: 'movie',
 		},
 		{
+			text: 'Histórico',
+			icon: 'history',
+		},
+		{
 			text: 'Editar conta',
 			icon: 'account_circle',
 		},
@@ -34,7 +38,7 @@ export function TemporaryDrawer({ open, toggleDrawer }: TemporaryDrawerAttr) {
 		<Box>
 			<List>
 				{items.map((item) => (
-					<ListItem>
+					<ListItem disablePadding>
 						<ListItemButton>
 							<ListItemIcon>
 								<Icon>{item.icon}</Icon>

@@ -6,6 +6,13 @@
 	width: 300px;
 }
 
+.card-inputs {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
 .section-title {
 	display: flex;
 	justify-content: center;
