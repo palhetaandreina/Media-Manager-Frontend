@@ -1,7 +1,10 @@
 import { useState } from 'react';
 
 import { AppBar, Box, Icon, IconButton, Toolbar, Typography } from '@mui/material';
+import HourChartOverview from '../components/drawer/charts/chart-hour';
 import { TemporaryDrawer } from '../components/drawer/drawer';
+
+import '../style/chart.css';
 
 export function HomePage() {
 	const [open, setOpen] = useState(false);
@@ -27,6 +30,10 @@ export function HomePage() {
 
 				<TemporaryDrawer open={open} toggleDrawer={toggleDrawer} />
 			</Box>
+
+			<div className="chart-style">
+				<HourChartOverview />
+			</div>
 		</div>
 	);
 }

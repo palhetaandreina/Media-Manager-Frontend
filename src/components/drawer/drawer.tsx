@@ -21,6 +21,10 @@ export function TemporaryDrawer({ open, toggleDrawer }: TemporaryDrawerAttr) {
 			icon: 'movie',
 		},
 		{
+			text: 'Histórico',
+			icon: 'history',
+		},
+		{
 			text: 'Editar conta',
 			icon: 'account_circle',
 		},
