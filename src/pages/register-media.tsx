@@ -10,8 +10,9 @@ import {
 	SelectChangeEvent,
 	TextField,
 	Toolbar,
+	Typography,
 } from '@mui/material';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Navbar } from '../components/navbar/navbar';
 
 export function RegisterMedia() {
@@ -27,91 +28,96 @@ export function RegisterMedia() {
 	};
 
 	return (
-		<Box sx={{ display: 'flex' }}>
-			<CssBaseline />
+		<Fragment>
+			<Box sx={{ display: 'flex', margin: 'auto' }}>
+				<CssBaseline />
 
-			<Navbar />
+				<Navbar />
 
-			<Box component="main" sx={{ padding: '24px', width: '100vw' }}>
-				<Toolbar />
+				<Box component="main" sx={{ padding: '24px', width: '100vw' }}>
+					<Toolbar />
 
-				<Box
-					sx={{
-						maxWidth: 400,
-						justifyContent: 'center',
-						margin: 'auto',
-						gap: '24px',
-						display: 'flex',
-						flexDirection: 'column',
-					}}
-				>
-					<Grid2 container spacing={2}>
-						<Grid2 size={6}>
-							<FormControl fullWidth>
-								<InputLabel id="media-type-label">Tipo</InputLabel>
-								<Select
-									value={(mediaType ?? '') as string}
-									labelId="media-type-label"
-									label="Tipo"
-									onChange={handleChange}
-								>
-									<MenuItem value="0">Filme</MenuItem>
-									<MenuItem value="1">Série</MenuItem>
-								</Select>
-							</FormControl>
+					<Box
+						sx={{
+							maxWidth: 400,
+							justifyContent: 'center',
+							margin: 'auto',
+							gap: '24px',
+							display: 'flex',
+							flexDirection: 'column',
+						}}
+					>
+						<div className="title">
+							<Typography variant="h4">Adicionar nova mídia</Typography>
+						</div>
+						<Grid2 container spacing={2}>
+							<Grid2 size={6}>
+								<FormControl fullWidth>
+									<InputLabel id="media-type-label">Tipo</InputLabel>
+									<Select
+										value={(mediaType ?? '') as string}
+										labelId="media-type-label"
+										label="Tipo"
+										onChange={handleChange}
+									>
+										<MenuItem value="0">Filme</MenuItem>
+										<MenuItem value="1">Série</MenuItem>
+									</Select>
+								</FormControl>
+							</Grid2>
+
+							<Grid2 size={6}>
+								<FormControl fullWidth>
+									<InputLabel id="media-type-label">Categoria</InputLabel>
+									<Select value={category} labelId="media-type-label" label="Categoria" onChange={categoryChange}>
+										<MenuItem value="acao">Ação</MenuItem>
+										<MenuItem value="terror">Terror</MenuItem>
+									</Select>
+								</FormControl>
+							</Grid2>
+
+							<Grid2 size={12}>
+								<TextField fullWidth id="outlined-adornment-amount" label="Título" variant="outlined" />
+							</Grid2>
+
+							<Grid2 size={6}>
+								<TextField
+									id="outlined-number"
+									label="Duração"
+									placeholder="0:00"
+									type="number"
+									slotProps={{
+										inputLabel: {
+											shrink: true,
+										},
+									}}
+									fullWidth
+								/>
+							</Grid2>
+
+							<Grid2 size={6}>
+								<TextField
+									id="outlined-number"
+									label="Data"
+									variant="outlined"
+									type="date"
+									slotProps={{
+										inputLabel: {
+											shrink: true,
+										},
+									}}
+									fullWidth
+								/>
+							</Grid2>
+							<Grid2 size={12}>
+								<Button variant="contained" color="secondary" sx={{ width: '100%' }}>
+									Registrar
+								</Button>
+							</Grid2>
 						</Grid2>
-
-						<Grid2 size={6}>
-							<FormControl fullWidth>
-								<InputLabel id="media-type-label">Categoria</InputLabel>
-								<Select value={category} labelId="media-type-label" label="Categoria" onChange={categoryChange}>
-									<MenuItem value="acao">Ação</MenuItem>
-									<MenuItem value="terror">Terror</MenuItem>
-								</Select>
-							</FormControl>
-						</Grid2>
-
-						<Grid2 size={12}>
-							<TextField fullWidth id="outlined-adornment-amount" label="Título" variant="outlined" />
-						</Grid2>
-
-						<Grid2 size={6}>
-							<TextField
-								id="outlined-number"
-								label="Duração"
-								placeholder="0:00"
-								type="number"
-								slotProps={{
-									inputLabel: {
-										shrink: true,
-									},
-								}}
-								fullWidth
-							/>
-						</Grid2>
-
-						<Grid2 size={6}>
-							<TextField
-								id="outlined-number"
-								label="Data"
-								variant="outlined"
-								type="date"
-								slotProps={{
-									inputLabel: {
-										shrink: true,
-									},
-								}}
-								fullWidth
-							/>
-						</Grid2>
-						<Grid2 size={12}>
-							<Button variant="contained" color="secondary" sx={{ width: '100%' }}>
-								Registrar
-							</Button>
-						</Grid2>
-					</Grid2>
+					</Box>
 				</Box>
 			</Box>
-		</Box>
+		</Fragment>
 	);
 }
