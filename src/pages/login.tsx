@@ -2,8 +2,8 @@ import { Button, Checkbox, FormControlLabel, TextField, Typography } from '@mui/
 
 export function Login() {
 	return (
-		<div>
-			<div className="section-title">
+		<div className="container">
+			<div className="title">
 				<Typography variant="h3">Fazer login</Typography>
 			</div>
 

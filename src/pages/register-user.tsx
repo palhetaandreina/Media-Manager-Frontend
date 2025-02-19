@@ -3,8 +3,8 @@ import '../style/style.css';
 
 export function RegisterUser() {
 	return (
-		<div>
-			<div className="section-title">
+		<div className="container">
+			<div className="title">
 				<Typography variant="h3">Cadastre-se</Typography>
 			</div>
 
