@@ -1,8 +1,10 @@
 import { Box, Drawer, Icon, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 type DrawerListMenuItem = {
 	text: string;
 	icon: string;
+	location: string;
 };
 
 type TemporaryDrawerAttr = {
@@ -13,24 +15,24 @@ type TemporaryDrawerAttr = {
 export function TemporaryDrawer({ open, toggleDrawer }: TemporaryDrawerAttr) {
 	const items: DrawerListMenuItem[] = [
 		{
-			text: 'Dashboard',
-			icon: 'bar_chart',
+			text: 'Home',
+			icon: 'home',
+			location: '/home',
 		},
 		{
-			text: 'Nova Mídia',
-			icon: 'movie',
+			text: 'Dashboard',
+			icon: 'bar_chart',
+			location: '/dashboard',
 		},
 		{
 			text: 'Histórico',
 			icon: 'history',
-		},
-		{
-			text: 'Editar conta',
-			icon: 'account_circle',
+			location: '/history',
 		},
 		{
 			text: 'Sair',
 			icon: 'logout',
+			location: '/',
 		},
 	];
 
@@ -44,7 +46,9 @@ export function TemporaryDrawer({ open, toggleDrawer }: TemporaryDrawerAttr) {
 								<Icon>{item.icon}</Icon>
 							</ListItemIcon>
 
-							<ListItemText>{item.text}</ListItemText>
+							<ListItemText>
+								<Link to={item.location}>{item.text}</Link>
+							</ListItemText>
 						</ListItemButton>
 					</ListItem>
 				))}
